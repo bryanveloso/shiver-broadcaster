@@ -14,7 +14,21 @@
 		93780A9518A35556006747D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93780A9418A35556006747D1 /* Cocoa.framework */; };
 		93780AA818A35556006747D1 /* BroadcasterApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 93780AA718A35556006747D1 /* BroadcasterApplication.m */; };
 		93780AAD18A35556006747D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93780AAC18A35556006747D1 /* Images.xcassets */; };
+		938CD20B18A4162B0062C4D0 /* libtwitchsdk-debug.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 938CD20918A4162B0062C4D0 /* libtwitchsdk-debug.dylib */; };
+		938CD20C18A4162B0062C4D0 /* libtwitchsdk-release.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 938CD20A18A4162B0062C4D0 /* libtwitchsdk-release.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		938CD20418A396ED0062C4D0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9357AAF118A35C2000E0DBB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
@@ -31,6 +45,8 @@
 		93780AA618A35556006747D1 /* BroadcasterApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcasterApplication.h; sourceTree = SOURCE_ROOT; };
 		93780AA718A35556006747D1 /* BroadcasterApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcasterApplication.m; sourceTree = SOURCE_ROOT; };
 		93780AAC18A35556006747D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
+		938CD20918A4162B0062C4D0 /* libtwitchsdk-debug.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libtwitchsdk-debug.dylib"; path = "Libraries/libtwitchsdk-debug.dylib"; sourceTree = "<group>"; };
+		938CD20A18A4162B0062C4D0 /* libtwitchsdk-release.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libtwitchsdk-release.dylib"; path = "Libraries/libtwitchsdk-release.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938CD20B18A4162B0062C4D0 /* libtwitchsdk-debug.dylib in Frameworks */,
+				938CD20C18A4162B0062C4D0 /* libtwitchsdk-release.dylib in Frameworks */,
 				93780A9518A35556006747D1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +85,7 @@
 			children = (
 				93780A9418A35556006747D1 /* Cocoa.framework */,
 				93780A9618A35556006747D1 /* Other Frameworks */,
+				938CD1FF18A396600062C4D0 /* Twitch SDK */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +123,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		938CD1FF18A396600062C4D0 /* Twitch SDK */ = {
+			isa = PBXGroup;
+			children = (
+				938CD20918A4162B0062C4D0 /* libtwitchsdk-debug.dylib */,
+				938CD20A18A4162B0062C4D0 /* libtwitchsdk-release.dylib */,
+			);
+			name = "Twitch SDK";
+			sourceTree = "<group>";
+		};
 		93E5BB5A18A3575200397411 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +160,7 @@
 				93780A8D18A35556006747D1 /* Sources */,
 				93780A8E18A35556006747D1 /* Frameworks */,
 				93780A8F18A35556006747D1 /* Resources */,
+				938CD20418A396ED0062C4D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -300,6 +329,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Bryan/Code/Revyver/shiver-broadcaster/Libraries",
+				);
+				OTHER_LDFLAGS = "-ltwitchsdk-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -313,6 +348,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Bryan/Code/Revyver/shiver-broadcaster/Libraries/Twitch/Release",
+					"/Users/Bryan/Code/Revyver/shiver-broadcaster/Libraries",
+				);
+				OTHER_LDFLAGS = "-ltwitchsdk-release";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
