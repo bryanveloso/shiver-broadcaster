@@ -16,6 +16,7 @@
 		93780AAD18A35556006747D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93780AAC18A35556006747D1 /* Images.xcassets */; };
 		938CD20B18A4162B0062C4D0 /* libtwitchsdk-debug.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 938CD20918A4162B0062C4D0 /* libtwitchsdk-debug.dylib */; };
 		938CD20C18A4162B0062C4D0 /* libtwitchsdk-release.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 938CD20A18A4162B0062C4D0 /* libtwitchsdk-release.dylib */; };
+		938CD20F18A582D00062C4D0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 938CD20E18A582D00062C4D0 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		93780AAC18A35556006747D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
 		938CD20918A4162B0062C4D0 /* libtwitchsdk-debug.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libtwitchsdk-debug.dylib"; path = "Libraries/libtwitchsdk-debug.dylib"; sourceTree = "<group>"; };
 		938CD20A18A4162B0062C4D0 /* libtwitchsdk-release.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libtwitchsdk-release.dylib"; path = "Libraries/libtwitchsdk-release.dylib"; sourceTree = "<group>"; };
+		938CD20E18A582D00062C4D0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				9357AAF918A35C9C00E0DBB9 /* Credits.rtf */,
-				9357AAF318A35C6000E0DBB9 /* InfoPlist.strings */,
 				93780A9C18A35556006747D1 /* Info.plist */,
+				9357AAF318A35C6000E0DBB9 /* InfoPlist.strings */,
 				9357AAF118A35C2000E0DBB9 /* main.m */,
+				938CD20E18A582D00062C4D0 /* Podfile */,
 				93780AA218A35556006747D1 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -204,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938CD20F18A582D00062C4D0 /* Podfile in Resources */,
 				93780AAD18A35556006747D1 /* Images.xcassets in Resources */,
 				9357AAF518A35C6000E0DBB9 /* InfoPlist.strings in Resources */,
 				9357AAFB18A35C9C00E0DBB9 /* Credits.rtf in Resources */,
